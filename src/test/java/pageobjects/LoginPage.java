@@ -1,4 +1,4 @@
-package pageObjects;
+package pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,11 +23,15 @@ public class LoginPage {
         PageFactory.initElements(driver,this);
     }
 
-    public void performLogin(String email, String password){
-        emailTextBox.sendKeys(email);
-        passwordTextBox.sendKeys(password);
-
+    public void clickOnLogin(){
         loginButton.click();
+    }
+
+    public void setEmailAndPassword(String email, String password){
+        emailTextBox.clear();
+        emailTextBox.sendKeys(email);
+        passwordTextBox.clear();
+        passwordTextBox.sendKeys(password);
     }
 
 

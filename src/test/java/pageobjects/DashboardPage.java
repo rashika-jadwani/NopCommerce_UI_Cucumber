@@ -1,4 +1,4 @@
-package pageObjects;
+package pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class DashboardPage {
 
-    @FindBy(xpath = "//input[@id='Password']")
+    @FindBy(xpath = "//a[text()='Logout']")
     WebElement logoutButton;
 
     public DashboardPage(WebDriver driver){
@@ -17,4 +17,5 @@ public class DashboardPage {
     public void perofrmLogout(){
         logoutButton.click();
     }
+
 }
