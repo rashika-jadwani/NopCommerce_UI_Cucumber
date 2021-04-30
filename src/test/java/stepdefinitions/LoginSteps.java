@@ -1,6 +1,5 @@
 package stepdefinitions;
 
-import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -52,7 +51,7 @@ public class LoginSteps {
         @When("user clicks on Logout link")
         public void userClicksOnLogoutLink() {
                 dashboardPage = new DashboardPage(driver);
-                dashboardPage.perofrmLogout();
+                dashboardPage.performLogout();
                 Assert.assertEquals("Your store. Login", driver.getTitle());
 
         }
