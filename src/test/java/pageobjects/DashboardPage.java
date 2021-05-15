@@ -11,6 +11,9 @@ public class DashboardPage {
     @FindBy(xpath = "//a[text()='Logout']")
     WebElement logoutButton;
 
+    @FindBy(xpath = "//ul[contains(@class, 'nav-sidebar')]/li/a/p[contains(text(),'Customers')]")
+    WebElement customerDropdown;
+
     @FindBy(xpath = "//p[text()=' Customers']")
     WebElement customers;
 
@@ -28,6 +31,11 @@ public class DashboardPage {
 
     public String getDashboardPageHeader(){
         return dashboardPageHeader.getText().trim();
+    }
+
+    public void goToCustomerTab(){
+        customerDropdown.click();
+        customers.click();
     }
 
 }

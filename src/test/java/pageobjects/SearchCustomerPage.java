@@ -4,11 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.WebTableHandler;
 
 public class SearchCustomerPage {
-
-    @FindBy(xpath = "//a[@href='/Admin/Customer/Create']")
-    WebElement addUserButton;
 
     @FindBy(xpath = "//input[@id='SearchEmail']")
     WebElement searchEmail;
@@ -31,6 +29,11 @@ public class SearchCustomerPage {
     public SearchCustomerPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
+    }
+
+    public void getCustomerTableData() throws InterruptedException {
+        WebTableHandler handler = new WebTableHandler();
+        handler.searchUserNameInCustomerTable("Name","Steve Gates");
     }
 
     public void searchByEmail(String email){

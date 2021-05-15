@@ -1,5 +1,6 @@
 Feature: NopCommerce Admin Login Functionality
 
+  @Temp
   Scenario: Successful Login with valid credentials
     Given user has launched the chrome browser
     When user opens the url "https://admin-demo.nopcommerce.com/login"

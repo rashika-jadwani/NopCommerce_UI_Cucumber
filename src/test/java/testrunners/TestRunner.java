@@ -7,8 +7,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "Features", glue = "stepdefinitions" , dryRun = false, plugin = {"pretty","html:target"}
+        features = "Features/AddCustomer.feature", glue = "stepdefinitions" , plugin = {"pretty","html:target"}
 )
-public class Runner {
+public class TestRunner {
 }
     

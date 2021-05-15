@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.JavaScriptExecutorUtil;
 
 public class LoginPage {
 
@@ -17,14 +18,12 @@ public class LoginPage {
     WebElement loginButton;
 
     WebDriver driver;
+    JavaScriptExecutorUtil javaScriptExecutorUtil;
 
     public LoginPage(WebDriver driver){
         this.driver=driver;
+        javaScriptExecutorUtil = new JavaScriptExecutorUtil(driver);
         PageFactory.initElements(driver,this);
-    }
-
-    public void clickOnLogin(){
-        loginButton.click();
     }
 
     public void setEmailAndPassword(String email, String password){
@@ -34,5 +33,9 @@ public class LoginPage {
         passwordTextBox.sendKeys(password);
     }
 
+    public void clickOnLogin(){
+        loginButton.click();
+        javaScriptExecutorUtil.executeScrollBy(0,1000);
+    }
 
 }
